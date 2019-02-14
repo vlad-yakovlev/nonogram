@@ -1,0 +1,35 @@
+.nonogram-cell {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    border: 1px solid black;
+
+    & + & {
+        margin-left: -1px;
+    }
+
+    &_fill {
+        background-color: black;
+    }
+
+    &_cross {
+        &:before,
+        &:after {
+            content: ' ';
+            position: absolute;
+            left: 9px;
+            height: 21px;
+            width: 2px;
+            background-color: grey;
+        }
+
+        &:before {
+            transform: rotate(45deg);
+        }
+
+        &:after {
+            transform: rotate(-45deg);
+        }
+    }
+}

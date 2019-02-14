@@ -1,0 +1,11 @@
+.nonogram-field {
+    padding: 20px;
+
+    &__row {
+        display: flex;
+
+        & + & {
+            margin-top: -1px;
+        }
+    }
+}
